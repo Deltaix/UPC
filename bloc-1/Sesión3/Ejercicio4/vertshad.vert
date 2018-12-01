@@ -1,0 +1,13 @@
+#version 330 core
+
+in vec3 vertex;
+in vec3 color;
+out vec4 vecColor;
+
+uniform float escala; // CAMBIO
+uniform mat4 TG;
+
+void main()  {
+    gl_Position = TG * vec4 (vertex * escala, 1.0); // CAMBIO
+    vecColor = vec4(color, 1);
+}
